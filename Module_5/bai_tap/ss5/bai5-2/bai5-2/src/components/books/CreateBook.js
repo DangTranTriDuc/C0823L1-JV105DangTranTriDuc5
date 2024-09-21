@@ -30,7 +30,7 @@ function CreateBook() {
             .min(0, "Please enter a number more than 0")
             .typeError("Please enter only number"),
         title: Yup.string().required("Please enter a title")
-            .matches(/^[A-Za-z ]{3,100}$/, "Please enter a title"),
+            .matches(/^[A-Za-z0-9 ]{3,100}$/, "Please enter a title"),
         amount: Yup.number().required("Please enter a number")
             .min(0, "Please enter a number more than 0")
             .typeError("Please enter only number"),

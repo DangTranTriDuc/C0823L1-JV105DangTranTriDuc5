@@ -2,7 +2,7 @@
   "books": [
     {
       "id": "1",
-      "title": "Harry Potter",
+      "title": "Harry Potter 1",
       "amount": 2500,
       "publicationDate": "2024-07-05",
       "category": {
@@ -62,7 +62,7 @@
     },
     {
       "id": "7",
-      "title": "Harry Potter",
+      "title": "Harry Potter 2",
       "amount": 2000,
       "publicationDate": "2024-07-19",
       "category": {

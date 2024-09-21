@@ -28,6 +28,7 @@ function ListBook() {
         const books = await bookService.getAllBooks(title, publicationDate, endDate, category);
         setBooks(books);
     };
+    if (!books) return <div>Loading...</div>;
     const getAllCategories = async () => {
         const categories = await categoryService.getALlCategory();
         setCategoryList(categories);
@@ -123,7 +124,7 @@ function ListBook() {
                 />
                 <br></br> <label>Category </label>
                 <select id="category" onChange={handleChange}>
-                    <option value=" ">--Choose Category--</option>
+                    <option value=" ">--All Category--</option>
                     {categoryList.map((category) => (
                         <option key={category.id} value={JSON.stringify(category)}>{category.name} </option>
                     ))}
@@ -134,7 +135,6 @@ function ListBook() {
             <table>
                 <thead>
                 <tr>
-                    <th>ID</th>
                     <th>Tiêu đề</th>
                     <th>Số lượng</th>
                     <th>Ngày xuất bản</th>
@@ -146,10 +146,9 @@ function ListBook() {
                 {
                     books.map((book) =>
                         <tr key={book.id}>
-                            <td>{book.id}</td>
                             <td>{book.title}</td>
                             <td>{book.amount}</td>
-                            <td>{book.publicationDate}</td>
+                            {/*<td>{book.publicationDate}</td>*/}
                             <td>{book.category.name}</td>
                             <td>
                                 <button onClick={() => handleUpdate(book)}>

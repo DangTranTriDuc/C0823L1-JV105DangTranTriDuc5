@@ -2,7 +2,7 @@ import axios from "axios";
 
 export const getAllBooks = async (title, publicationDate,endDate,category) => {
     try {
-        let query = "http://localhost:8080/books?";
+        let query = "http://localhost:3030/books?";
         if (title) {
             query += `title_like=${title}&`;
         }
@@ -21,22 +21,6 @@ export const getAllBooks = async (title, publicationDate,endDate,category) => {
         console.log(error);
     }
 };
-// export const getAllBooks = async (title,category) => {
-//     try {
-//         let query = "http://localhost:8080/books?";
-//         if (title) {
-//             query += `title=${title}&`;
-//         }
-//         if (category) {
-//             query += `category.id=${category}&`;
-//         }
-//         let result = await axios.get(query);
-//         return result.data;
-//     } catch (error) {
-//         console.log(error);
-//     }
-// }
-
 // const formatDate = (date) => {
 //     const d = new Date(date);
 //     let month = '' + (d.getMonth() + 1);
